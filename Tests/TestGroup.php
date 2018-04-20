@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\UserBundle\Tests;
+namespace Cottect\Bundle\COTUserBundle\Tests;
 
 use FOS\UserBundle\Model\Group;
 

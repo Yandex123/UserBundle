@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\UserBundle\Tests\Security;
+namespace Cottect\Bundle\COTUserBundle\Tests\Security;
 
-use FOS\UserBundle\Security\UserProvider;
+use Cottect\Bundle\COTUserBundle\Security\UserProvider;
 use PHPUnit\Framework\TestCase;
 
 class UserProviderTest extends TestCase
@@ -28,7 +28,7 @@ class UserProviderTest extends TestCase
 
     protected function setUp()
     {
-        $this->userManager = $this->getMockBuilder('FOS\UserBundle\Model\UserManagerInterface')->getMock();
+        $this->userManager = $this->getMockBuilder('Cottect\Bundle\COTUserBundle\Model\UserManagerInterface')->getMock();
         $this->userProvider = new UserProvider($this->userManager);
     }
 
@@ -107,20 +107,5 @@ class UserProviderTest extends TestCase
             ->will($this->returnValue(get_class($user)));
 
         $this->userProvider->refreshUser($user);
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\UnsupportedUserException
-     */
-    public function testRefreshInvalidUserClass()
-    {
-        $user = $this->getMockBuilder('FOS\UserBundle\Model\User')->getMock();
-        $providedUser = $this->getMockBuilder('FOS\UserBundle\Tests\TestUser')->getMock();
-
-        $this->userManager->expects($this->atLeastOnce())
-            ->method('getClass')
-            ->will($this->returnValue(get_class($user)));
-
-        $this->userProvider->refreshUser($providedUser);
     }
 }

@@ -15,7 +15,8 @@ use Cottect\Bundle\COTUserBundle\Util\UserManipulator;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * @author Vinh Banh <apacheservices68@gmail.com>
+ * @author Antoine Hérault <antoine.herault@gmail.com>
+ * @author Lenar Lõhmus <lenar@city.ee>
  */
 class DemoteUserCommand extends RoleCommand
 {

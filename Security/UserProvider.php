@@ -7,7 +7,7 @@
  */
 namespace Cottect\Bundle\COTUserBundle\Security;
 
-use Cottect\Bundle\COTUserBundle\Model\UserInterface;
+use FOS\UserBundle\Model\UserInterface;
 use Cottect\Bundle\COTUserBundle\Model\UserManagerInterface;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
@@ -51,7 +51,7 @@ class UserProvider implements UserProviderInterface
     public function refreshUser(SecurityUserInterface $user)
     {
         if (!$user instanceof UserInterface) {
-            throw new UnsupportedUserException(sprintf('Expected an instance of Cottect\Bundle\COTUserBundle\Model\UserInterface, but got "%s".', get_class($user)));
+            throw new UnsupportedUserException(sprintf('Expected an instance of FOS\UserBundle\Model\UserInterface, but got "%s".', get_class($user)));
         }
 
         if (!$this->supportsClass(get_class($user))) {

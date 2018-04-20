@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\UserBundle\Tests\Doctrine;
+namespace Cottect\Bundle\COTUserBundle\Tests\Doctrine;
 
-use FOS\UserBundle\Doctrine\UserManager;
+use Cottect\Bundle\COTUserBundle\Doctrine\UserManager;
 use FOS\UserBundle\Model\User;
 use PHPUnit\Framework\TestCase;
 
 class UserManagerTest extends TestCase
 {
-    const USER_CLASS = 'FOS\UserBundle\Tests\Doctrine\DummyUser';
+    const USER_CLASS = 'Cottect\Bundle\COTUserBundle\Tests\Doctrine\DummyUser';
 
     /** @var UserManager */
     protected $userManager;

@@ -1,18 +1,9 @@
 <?php
 
-/*
- * This file is part of the FOSUserBundle package.
- *
- * (c) FriendsOfSymfony <http://friendsofsymfony.github.com/>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Cottect\Bundle\COTUserBundle\Tests\Command;
 
-namespace FOS\UserBundle\Tests\Command;
-
-use FOS\UserBundle\Command\ActivateUserCommand;
-use FOS\UserBundle\Util\UserManipulator;
+use Cottect\Bundle\COTUserBundle\Command\ActivateUserCommand;
+use Cottect\Bundle\COTUserBundle\Util\UserManipulator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
@@ -85,7 +76,7 @@ class ActivateUserCommandTest extends TestCase
      */
     private function getManipulator($username)
     {
-        $manipulator = $this->getMockBuilder('FOS\UserBundle\Util\UserManipulator')
+        $manipulator = $this->getMockBuilder('Cottect\Bundle\COTUserBundle\Util\UserManipulator')
             ->disableOriginalConstructor()
             ->getMock();
 

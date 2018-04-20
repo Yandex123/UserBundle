@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 
 /**
- * @author Antoine Hérault <antoine.herault@gmail.com>
+ * @author Vinh Banh <apacheservices68@gmail.com>
  */
 class ActivateUserCommand extends Command
 {

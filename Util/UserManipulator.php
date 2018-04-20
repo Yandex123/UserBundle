@@ -7,7 +7,7 @@
 
 namespace Cottect\Bundle\COTUserBundle\Util;
 
-use Cottect\Event\UserEvent;
+use FOS\UserBundle\Event\UserEvent;
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Model\UserInterface;
 use Cottect\Bundle\COTUserBundle\Model\UserManagerInterface;

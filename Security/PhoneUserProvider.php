@@ -1,4 +1,6 @@
 <?php
+namespace Cottect\Bundle\COTUserBundle\Security;
+
 /**
  * Created by PhpStorm.
  * User: banhvinh
@@ -6,7 +8,6 @@
  * Time: 23:44
  */
 
-namespace Cottect\Bundle\COTUserBundle\Security;
 
 
 /**

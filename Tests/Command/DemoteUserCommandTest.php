@@ -1,18 +1,10 @@
 <?php
 
-/*
- * This file is part of the FOSUserBundle package.
- *
- * (c) FriendsOfSymfony <http://friendsofsymfony.github.com/>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
-namespace FOS\UserBundle\Tests\Command;
+namespace Cottect\Bundle\COTUserBundle\Tests\Command;
 
-use FOS\UserBundle\Command\DemoteUserCommand;
-use FOS\UserBundle\Util\UserManipulator;
+use Cottect\Bundle\COTUserBundle\Command\DemoteUserCommand;
+use Cottect\Bundle\COTUserBundle\Util\UserManipulator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
@@ -91,7 +83,7 @@ class DemoteUserCommandTest extends TestCase
      */
     private function getManipulator($username, $role, $super)
     {
-        $manipulator = $this->getMockBuilder('FOS\UserBundle\Util\UserManipulator')
+        $manipulator = $this->getMockBuilder('Cottect\Bundle\COTUserBundle\Util\UserManipulator')
             ->disableOriginalConstructor()
             ->getMock();
 

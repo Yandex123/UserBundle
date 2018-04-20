@@ -24,7 +24,8 @@
         "symfony/validator": "^2.8 || ^3.0 || ^4.0",
         "twig/twig": "^1.28 || ^2.0",
         "symfony/templating": "^2.8 || ^3.0 || ^4.0",
-        "paragonie/random_compat": "^1 || ^2"
+        "paragonie/random_compat": "^1 || ^2",
+        "cottect/UserBundle": "^1.0"
     },
     "require-dev": {
         "doctrine/doctrine-bundle": "^1.3",
@@ -41,12 +42,27 @@
     },
     "autoload": {
         "psr-4": {
+            "FOS\\UserBundle\\": "vendor/cottect/UserBundle",
             "Cottect\\Bundle\\COTUserBundle\\": ""
         },
         "exclude-from-classmap": [
             "/Tests/"
         ]
     },
+    "repositories": [
+        {
+            "type":"package",
+            "package": {
+                "name": "cottect/UserBundle",
+                "version":"1.0",
+                "source": {
+                    "url": "https://github.com/cottect/UserBundle.git",
+                    "type": "git",
+                    "reference":"develop"
+                }
+            }
+        }
+    ],
     "autoload-dev": {
         "psr-4": {
             "Cottect\\Bundle\\COTUserBundle\\Tests\\": "/Tests/"

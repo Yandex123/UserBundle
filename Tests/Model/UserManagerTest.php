@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\UserBundle\Tests\Model;
+namespace Cottect\Bundle\COTUserBundle\Tests\Model;
 
-use FOS\UserBundle\Model\UserManager;
+use Cottect\Bundle\COTUserBundle\Model\UserManager;
 use PHPUnit\Framework\TestCase;
 
 class UserManagerTest extends TestCase
@@ -183,7 +183,7 @@ class UserManagerTest extends TestCase
      */
     private function getUserManager(array $args)
     {
-        return $this->getMockBuilder('FOS\UserBundle\Model\UserManager')
+        return $this->getMockBuilder('Cottect\Bundle\COTUserBundle\Model\UserManager')
             ->setConstructorArgs($args)
             ->getMockForAbstractClass();
     }

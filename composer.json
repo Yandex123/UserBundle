@@ -43,7 +43,7 @@
     "autoload": {
         "psr-4": {
             "FOS\\UserBundle\\": "vendor/cottect/UserBundle",
-            "Cottect\\Bundle\\COTUserBundle\\": ""
+            "Cottect\\Bundle\\COTUserBundle\\": "src"
         },
         "exclude-from-classmap": [
             "/Tests/"

@@ -1,7 +1,7 @@
 {
-    "name": "cottect/user-bundle",
+    "name": "cottect/cot-user-bundle",
     "type": "symfony-bundle",
-    "description": "Cottect UserBundle",
+    "description": "Cottect COTUserBundle",
     "keywords": ["User management"],
     "homepage": "https://cottect.com",
     "license": "MIT",

@@ -11,7 +11,7 @@
 
 namespace Cottect\Bundle\COTUserBundle\Tests;
 
-use FOS\UserBundle\Model\User;
+use Cottect\Bundle\COTUserBundle\Model\User;
 
 class TestUser extends User
 {

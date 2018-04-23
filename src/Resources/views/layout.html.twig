@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{% block title %}Cottect{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('@COTUserBundle/Resources/public/css/app.css') }}">
+    {% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body id="{% block body_id %}{% endblock %}">
+{% block header %}
+    <header>
+        <nav id="globalHeader" class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand " href="/">Cottect</a>
+                <button class="navbar-toggler navbar-toggler-right " type="button" data-toggle="collapse"
+                        data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{# path('blog_index') #}">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/videos">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/success-stories">Success stories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/guides">Guides</a>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled my-2 my-lg-0">
+                        <li>
+                            <form class="form-inline mb-2" method="post" action="{# path('security_login') #}">
+                                <input type="text" id="login_emailOrPhone"
+                                       name="login[emailOrPhone]"
+                                       required="required" placeholder="{# 'label.emailOrPhoneLess'|trans #}"
+                                       class="form-control mb-2 mr-sm-2 mb-sm-0">
+                                <input type="password" id="login_plainPassword" name="login[plainPassword]"
+                                       required="required" placeholder="{# 'label.password'|trans #}"
+                                       class="form-control mb-2 mr-sm-2 mb-sm-0">
+                                <input type="hidden" id="login_token" name="login[token]"
+                                       value="{{ csrf_token('login') }}">
+                                <button type="submit" class="btn btn-outline-light my-2 my-sm-0">Login</button>
+                            </form>
+                        </li>
+                        <li><a href="{# path('security_forgottenAccount') #}" class="forgottenAccount">Forgotten
+                                account?</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+{% block body %}
+    <div id="main" class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% block main %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    <footer id="globalFooter" class="container">
+        <div class="row">
+            <div class="col-md-12 pl-0 pr-0 mt-5">
+                <ul class="list-inline">
+                    {#{% for locale in locales() %}#}
+                    {#<li {% if app.request.locale == locale.code %}#}
+                    {#aria-checked="true" class="list-inline-item active"#}
+                    {#{% else %}#}
+                    {#class="list-inline-item" aria-checked="false"#}
+                    {#{% endif %} role="menuitem">#}
+                    {#<a href="{{ path(app.request.get('_route', 'blog_index'), app.request.get('_route_params', [])|merge({_locale: locale.code})) }}">#}
+                    {#{{ locale.name|capitalize }}#}
+                    {#</a>#}
+                    {#</li>#}
+                    {#{% endfor %}#}
+                </ul>
+                <hr>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="{# path('security_register') #}">Register</a></li>
+                    <li class="list-inline-item"><a href="{# path('security_login') #}">Login</a></li>
+                    <li class="list-inline-item"><a href="{# path('blog_index') #}">Blog</a></li>
+                    <li class="list-inline-item"><a href="/developers">Developers</a></li>
+                    <li class="list-inline-item"><a href="/about">About</a></li>
+                    <li class="list-inline-item"><a href="/cookies">Cookies</a></li>
+                    <li class="list-inline-item"><a href="/privacy">Privacy</a></li>
+                    <li class="list-inline-item"><a href="/terms">Terms</a></li>
+                    <li class="list-inline-item"><a href="/help">Help</a></li>
+                </ul>
+                <p>Cottect © 2018</div>
+        </div>
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('@COTUserBundle/Resources/public/manifest.js') }}"></script>
+    <script src="{{ asset('@COTUserBundle/Resources/public/js/common.js') }}"></script>
+    <script src="{{ asset('@COTUserBundle/Resources/public/js/app.js') }}"></script>
+    {% block javascripts_add %}
+    {% endblock %}
+{% endblock %}
+{#<!-- Page rendered on {{ 'now'|localizeddate('long', 'long', null, 'UTC') }} -->#}
+</body>
+</html>
